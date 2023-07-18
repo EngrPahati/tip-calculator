@@ -28,7 +28,7 @@ export default function App() {
       >How did your friend like the service?
       </SelectPercentage>
 
-      {bill && (
+      {bill > 0 && (
         <>
           <Output
             bill={bill}
@@ -53,7 +53,7 @@ function BillInput({setBill, bill}) {
     <div>
       <label for="bill">How much was the bill?</label>
       <input
-        value={bill}
+        value={bill ? bill : ''}
         id='bill'
         placeholder='Bill Value'
         onChange={e => setBill(Number(e.target.value))}
